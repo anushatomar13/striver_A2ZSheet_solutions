@@ -1,0 +1,20 @@
+https://www.codingninjas.com/studio/problems/largest-element-in-the-array-largest-element-in-the-array_5026279?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTab=1
+
+#include <bits/stdc++.h> 
+
+int largestElement(std::vector<int> &nums, int n) {
+    if (n == 0) {
+        return INT_MIN;  
+    }
+
+    std::sort(nums.begin(), nums.end());
+    int maxo = nums[n - 1];  
+
+    for (int i = 0; i < n; i++) {
+        if (nums[i] > maxo) {
+            maxo = nums[i];  
+        }
+    }
+
+    return maxo;
+}
