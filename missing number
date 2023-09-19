@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int missing = nums.size();  
+        for (int i = 0; i < nums.size(); i++) {
+            missing ^= i ^ nums[i];
+        }
+        return missing;
+    }
+};
+//do dry run to understand better
+
+/*OR 
+int missingNumber(vector<int>& nums) {
+    int n = nums.size();
+    int expectedSum = n * (n + 1) / 2; // Sum of all numbers from 0 to n
+
+    int actualSum = 0;
+    for (int num : nums) {
+        actualSum += num;
+    }
+
+    return expectedSum - actualSum;
+}*\
