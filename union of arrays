@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <set>
+
+std::vector<int> sortedArray(const std::vector<int>& a, const std::vector<int>& b) {
+    std::vector<int> combined(a.begin(), a.end());
+    combined.insert(combined.end(), b.begin(), b.end());
+    
+    // Sort the combined vector
+    std::sort(combined.begin(), combined.end());
+
+    // Remove duplicates using a set
+    std::set<int> uniqueSet(combined.begin(), combined.end());
+
+    // Convert the set back to a vector
+    std::vector<int> final(uniqueSet.begin(), uniqueSet.end());
+
+    return final;
+}
+
+
