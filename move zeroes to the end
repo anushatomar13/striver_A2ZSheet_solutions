@@ -1,0 +1,21 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n=nums.size();
+        vector<int> arr;
+        for(int i=0;i<n;i++){
+            if(nums[i]!=0){
+                arr.push_back(nums[i]);
+            }
+           //yahan tak clear hai
+        }
+//fir yahan par yeh aese socha ki pehle non zeroes toh daldie sab and ab 0 dalne hain toh woh tabhi hoga if size of arr<size of nums and jab tak yeh hai 0 add hote rhenge push use karke...agar dono equal hojate hain means ruk jaega
+         while (arr.size() < n) {
+            arr.push_back(0);
+        }
+        for (int i = 0; i < n; i++) {
+            nums[i] = arr[i];
+        }
+        
+    }
+};
